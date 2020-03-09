@@ -1,0 +1,28 @@
+- debug:
+    msg: START eos_l2_interface/cli/no_interface.yaml on connection={{ ansible_connection }}
+- name: Create fake interface
+  eos_interface:
+    name: Management0
+  become: true
+- block:
+  - name: eos_l2_interface shouldn't fail
+    eos_l2_interface: &id001
+      name: Ethernet1
+      state: absent
+    become: true
+    register: result
+  - assert:
+      that: '''Interface does not exist'' in result.warnings[0]'
+  always:
+  - name: Cleanup fake interface
+    become: true
+    ansible.netcommon.cli_config:
+      config: no interface Management0
+- name: eos_l2_interface should still not fail
+  eos_l2_interface: *id001
+  become: true
+  register: result
+- assert:
+    that: result.warnings is not defined
+- debug:
+    msg: END eos_l2_interface/cli/no_interface.yaml on connection={{ ansible_connection }}

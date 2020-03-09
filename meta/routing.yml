@@ -1,0 +1,43 @@
+plugin_routing:
+  integration:
+    populate:
+      deprecation:
+        removal_date: TBD
+        warning_text: see plugin documentation for details
+    remove_config:
+      deprecation:
+        removal_date: TBD
+        warning_text: see plugin documentation for details
+    parsed:
+      deprecation:
+        removal_date: TBD
+        warning_text: see plugin documentation for details
+    parsed_cfg:
+      deprecation:
+        removal_date: TBD
+        warning_text: see plugin documentation for details
+  modules:
+    eos_static_route:
+      deprecation:
+        removal_date: TBD
+        warning_text: see plugin documentation for details
+    eos_l3_interface:
+      deprecation:
+        removal_date: TBD
+        warning_text: see plugin documentation for details
+    eos_vlan:
+      deprecation:
+        removal_date: TBD
+        warning_text: see plugin documentation for details
+    eos_l2_interface:
+      deprecation:
+        removal_date: TBD
+        warning_text: see plugin documentation for details
+    eos_linkagg:
+      deprecation:
+        removal_date: TBD
+        warning_text: see plugin documentation for details
+    eos_interface:
+      deprecation:
+        removal_date: TBD
+        warning_text: see plugin documentation for details
